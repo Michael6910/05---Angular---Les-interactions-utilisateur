@@ -1,0 +1,34 @@
+<div class="container">
+<h1>Create Kitten</h1>
+
+
+<form [formGroup]="createKittenForm">
+  <div class="form-group">
+    <label for="Name">Name</label>
+    <input type="text" class="form-control" id="Name" placeholder="Enter name..." formControlName="name">
+  </div>
+
+  <div class="form-group">
+    <label for="Race">Race</label>
+    <input type="text" class="form-control" id="Race" placeholder="Enter race..." formControlName="race">
+  </div>
+  <div class="form-group">
+    <label for="birthday">Birthday</label>
+    <input type="date" class="form-control" id="birthday" formControlName="birthday">
+  </div>
+  <div class="form-group">
+    <label for="picture">Picture</label>
+    <input type="text" class="form-control" id="picture" placeholder="Enter url..." formControlName="picture">
+  </div>
+  <div class="form-group">
+  <button class="btn btn-success" [disabled] = "!createKittenForm.valid"  (click)="giveChaton($event)" >Create</button>
+</div>
+</form>
+
+<!--- Log the FormGroup values to see if the binding is working -->
+<p>Form value {{ createKittenForm.value | json }} </p>
+<p> Form status {{ createKittenForm.status | json}} </p>
+
+<p class="text-success" *ngIf="createKittenForm.valid">Formulaire ok</p>
+
+</div>

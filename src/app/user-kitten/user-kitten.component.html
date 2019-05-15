@@ -1,0 +1,19 @@
+<div class="card-deck container-fluid">
+
+    <div *ngFor="let cat of catService.myChaton" class="card border-dark mb-3" style="min-width: 15rem; max-width: 15rem">
+  
+      <div class="container-picture">
+        <img class="card-img-top heightimage" [src]="cat.picture" alt="image chaton">
+        <div class="card-body">
+          <p class="card-text">Name: {{cat.name}}</p>
+          <p class="card-text">Race: {{cat.race}}</p>
+          <p class="card-text">Birthday: {{cat.birthday | date :"dd/MM/yyyy"}}</p>
+        </div>
+      </div>
+  </div>
+
+  
+
+
+  </div>
+  
